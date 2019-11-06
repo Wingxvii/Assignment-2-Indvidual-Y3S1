@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
+using GameLogicManagers;
 
 public class BulletController : MonoBehaviour
 {
     public float bulletSpeed = 0.1f;
+    public float horizontalSpeed = 0.0f;
     public Boundary boundary;
 
     //TODO: create a reference to the BulletPoolManager
@@ -25,7 +27,7 @@ public class BulletController : MonoBehaviour
 
     private void Move()
     {
-        transform.position += new Vector3(0.0f, bulletSpeed, 0.0f);
+        transform.position += new Vector3(horizontalSpeed, bulletSpeed, 0.0f);
     }
 
     private void CheckBounds()
@@ -34,7 +36,8 @@ public class BulletController : MonoBehaviour
         {
             //TODO: This code needs to change to use the BulletPoolManager's
             //TODO: ResetBullet function which will return the bullet to the pool
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
+            BulletPoolManager.Instance.ResetBullet(this.gameObject);
         }
     }
 }

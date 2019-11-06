@@ -165,6 +165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObject: {fileID: 7008785284576285171, guid: bb06c5ba2d15c2647b82760f50c866d5,
     type: 3}
+  bullet: {fileID: 0}
+  poolSize: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +663,7 @@ PrefabInstance:
     - target: {fileID: 6258031004218500820, guid: 0cd6714592b08874d95701663d2115fa,
         type: 3}
       propertyPath: numberOfClouds
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6258031004218500823, guid: 0cd6714592b08874d95701663d2115fa,
         type: 3}

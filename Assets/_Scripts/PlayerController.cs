@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
                 //TODO: bullet object. 
                 //TODO: Ensure you position the new bullet at the bulletSpawn position
                 //Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
-                BulletPoolManager.Instance.GetBullet().transform.position = bulletSpawn.position;
+                BulletPoolManager.Instance.GetBullet(UnityEngine.Random.Range(0.01f, 0.1f), UnityEngine.Random.Range(-0.1f, 0.1f)).transform.position = bulletSpawn.position;
 
             }
 

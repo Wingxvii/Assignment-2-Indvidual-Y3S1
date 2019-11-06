@@ -28,7 +28,6 @@ namespace GameLogicManagers
 
         public GameObject bulletObject;
 
-        public GameObject bullet;
         public int poolSize = 50;
 
         //TODO: create a structure to contain a collection of bullets
@@ -40,16 +39,10 @@ namespace GameLogicManagers
             // TODO: add a series of bullets to the Bullet Pool
             for (int counter = 0; counter < poolSize; counter++)
             {
-                bullet = GameObject.Instantiate(bulletObject, Vector3.zero, Quaternion.identity);
+                GameObject bullet = GameObject.Instantiate(bulletObject, Vector3.zero, Quaternion.identity);
                 bulletPool.Enqueue(bullet);
                 bullet.SetActive(false);
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         //TODO: modify this function to return a bullet from the Pool
@@ -59,6 +52,7 @@ namespace GameLogicManagers
             return bulletPool.Dequeue();
         }
 
+        //TODO: Here is the factory
         public GameObject GetBullet(float speed)
         {
             bulletPool.Peek().SetActive(true);
@@ -66,6 +60,7 @@ namespace GameLogicManagers
             return bulletPool.Dequeue();
         }
 
+        //TODO: Here is also the factory
         public GameObject GetBullet(float speed, float horizontalSpeed)
         {
             bulletPool.Peek().SetActive(true);
@@ -73,7 +68,6 @@ namespace GameLogicManagers
             bulletPool.Peek().GetComponent<BulletController>().horizontalSpeed = horizontalSpeed;
             return bulletPool.Dequeue();
         }
-
 
         //TODO: modify this function to reset/return a bullet back to the Pool 
         public void ResetBullet(GameObject bullet)

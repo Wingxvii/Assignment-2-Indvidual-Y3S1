@@ -52,23 +52,6 @@ namespace GameLogicManagers
             return bulletPool.Dequeue();
         }
 
-        //TODO: Here is the factory
-        public GameObject GetBullet(float speed)
-        {
-            bulletPool.Peek().SetActive(true);
-            bulletPool.Peek().GetComponent<BulletController>().bulletSpeed = speed;
-            return bulletPool.Dequeue();
-        }
-
-        //TODO: Here is also the factory
-        public GameObject GetBullet(float speed, float horizontalSpeed)
-        {
-            bulletPool.Peek().SetActive(true);
-            bulletPool.Peek().GetComponent<BulletController>().bulletSpeed = speed;
-            bulletPool.Peek().GetComponent<BulletController>().horizontalSpeed = horizontalSpeed;
-            return bulletPool.Dequeue();
-        }
-
         //TODO: modify this function to reset/return a bullet back to the Pool 
         public void ResetBullet(GameObject bullet)
         {
@@ -76,4 +59,5 @@ namespace GameLogicManagers
             bulletPool.Enqueue(bullet);
         }
     }
+    
 }

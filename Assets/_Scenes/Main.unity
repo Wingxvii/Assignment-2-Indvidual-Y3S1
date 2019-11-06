@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 154382890}
   - component: {fileID: 154382891}
+  - component: {fileID: 154382892}
   m_Layer: 0
   m_Name: BulletPoolManager
   m_TagString: Manager
@@ -165,8 +166,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObject: {fileID: 7008785284576285171, guid: bb06c5ba2d15c2647b82760f50c866d5,
     type: 3}
-  bullet: {fileID: 0}
   poolSize: 50
+--- !u!114 &154382892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154382889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e1386bc10749d4c830376c49c30390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

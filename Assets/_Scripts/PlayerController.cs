@@ -121,7 +121,10 @@ public class PlayerController : MonoBehaviour
                 //TODO: GetBullet function which will return a reference to a 
                 //TODO: bullet object. 
                 //TODO: Ensure you position the new bullet at the bulletSpawn position
-                BulletPoolManager.Instance.GetBullet(UnityEngine.Random.Range(0.01f, 0.1f), UnityEngine.Random.Range(-0.1f, 0.1f)).transform.position = bulletSpawn.position;
+                BulletFactory.Instance.bulletSpeed = UnityEngine.Random.Range(0.01f, 0.1f);
+                BulletFactory.Instance.horizontalSpeed = UnityEngine.Random.Range(0.01f, 0.1f);
+
+                BulletFactory.Instance.GetBullet().transform.position = bulletSpawn.position;
 
             }
 
